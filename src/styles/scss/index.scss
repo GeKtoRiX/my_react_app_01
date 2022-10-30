@@ -1,0 +1,14 @@
+/* Общие настройки сайта. */
+@use "./custom";
+@use "./components/app";
+@use "./components/animations";
+@use "./components/buttons";
+@use "./components/forms";
+@use "./components/mixins";
+/* Приложения сайта.*/
+//=======toDoApp=======
+@use "./toDoApp/toDo";
+@use "./toDoApp/toDoForm";
+@use "./toDoApp/toDoList";
+// Шрифты сайта.
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap");

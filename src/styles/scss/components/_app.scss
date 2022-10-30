@@ -1,0 +1,14 @@
+@use "../custom" as *;
+@use "./mixins" as *;
+
+.app {
+    margin: 2rem;
+    text-align: center;
+    h1{
+        margin-bottom: 2rem;
+        font-size: 2rem;
+    }
+    h2{
+        margin-top: 3.5rem;
+    }
+}
