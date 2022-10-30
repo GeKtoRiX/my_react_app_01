@@ -5,9 +5,28 @@ const ToDo = ({ toDo, deleteToDo, index }) => {
   return (
     // При двойном нажатии левой кнопки мыши происходит пробрасывание индекса текущего компонента для его удаления из списка заданий.
     <div onDoubleClick={() => deleteToDo(index)} className="toDo">
-      <div className="toDo__text">
-      <RiTodoFill style={{marginRight:"1rem", fontSize:"1.8rem" ,color:"teal",}} />  
-      {toDo}</div>
+      <RiTodoFill
+        style={{ margin: "0 0.5rem", fontSize: "1.8rem", color: "teal" }}
+      />
+      <div className="toDo__text">{toDo}</div>
+      <button className="">
+        {" "}
+        <RiTodoFill
+          style={{
+            fontSize: "1.8rem",
+            color: "lightgrey",
+          }}
+        />{" "}
+      </button>
+      <button className="">
+        {" "}
+        <RiTodoFill
+          style={{
+            fontSize: "1.8rem",
+            color: "lightgrey",
+          }}
+        />{" "}
+      </button>
     </div>
   );
 };
