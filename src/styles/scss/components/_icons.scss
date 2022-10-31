@@ -1,0 +1,12 @@
+// Шаблонные свойства иконок.
+.icon-std {
+    font-size: 1.5rem;
+    color: teal;
+    background-color: #ffffff;
+    transition: cubic-bezier(0.19, 1, 0.22, 1) all 1.5s;
+}
+// Шаблонное свойство неактивных иконок.
+.icon-std-disable {
+    color: darkgrey;
+    background-color: grey;
+}

@@ -1,26 +1,24 @@
 @use "../custom" as *;
 @use "./mixins" as *;
-
-.buttons-std{
+// Шаблонные свойства контейнера с кнопками.
+.buttons-std {
     // border: 1px solid red;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
-    
 }
-
-.button-std{
+// Шаблонные свойства кнопок в коннейнерах.
+.button-std {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
-    width: 55px;
-    height: 50px;
-    margin-right: 1.3rem;
-    border-radius: 7px;
-    font-size:1.6rem;
-    color: teal;
-    &:hover{
+    min-width: 1rem;
+    min-height: auto;
+    border-radius: 3px;
+    border: hidden;
+    margin: 0 0.1rem;
+    &:hover {
         cursor: pointer;
-        background-color:burlywood;
+        background-color: beige;
     }
 }

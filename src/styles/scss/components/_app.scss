@@ -1,14 +1,17 @@
 @use "../custom" as *;
 @use "./mixins" as *;
-
+// Главный компонент приложения.
 .app {
     margin: 2rem;
     text-align: center;
-    h1{
+    h1 {
         margin-bottom: 2rem;
         font-size: 2rem;
     }
-    h2{
-        margin-top: 3.5rem;
+    // Кнопки в главном приложении
+    .button-app {
+        min-width: 45px;
+        min-height: 40px;
+        margin: 0 0.7rem;
     }
 }

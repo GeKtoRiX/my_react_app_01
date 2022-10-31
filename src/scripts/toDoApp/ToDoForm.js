@@ -1,5 +1,7 @@
 // Загрузка хука отслеживания состояний компонента.
 import { useState } from "react";
+//
+import { BsArrowUpCircleFill } from "react-icons/bs";
 // Форма добавления пользовательской задачи в существующий список.
 const ToDoForm = ({ addNewToDo }) => {
   // Доступ к данным формы при их отправки.
@@ -38,8 +40,8 @@ const ToDoForm = ({ addNewToDo }) => {
         // Выравнивание текста внутри области ввода по центру.
         style={{ textAlign: "center" }}
       ></input>
-      <button className="button" type="Submit">
-        Submit
+      <button className="button-std button-toDoForm" type="Submit">
+        <BsArrowUpCircleFill />
       </button>
     </form>
   );

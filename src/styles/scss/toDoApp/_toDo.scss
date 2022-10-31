@@ -4,7 +4,7 @@
     // Ширина элемента.
     width: 50%;
     // Округление углов элемента.
-    border-radius: 0.2rem;
+    border-radius: 3px;
     // Элементы внутри form буду располгаться в виде флекс элементов.
     display: flex;
     // Выравнивание главной оси(X-по умолчанию) по центру.
@@ -18,10 +18,10 @@
     // Размер текста элемента.
     font-size: 1.2rem;
     // Фон элемента.
-    background-color: #fbfef9;
+    background-color: #ffffff;
     // Вложенный селектор изменения свойств строки.
     &__text {
-        border: 1px solid red;
+        // border: 1px solid red;
         // Ширина элемента строки в 90% от родительского.
         width: 95%;
         // Элементы внутри form буду располгаться в виде флекс элементов.
@@ -30,7 +30,31 @@
         justify-content: left;
         // Выравнивание поперечной оси(Y-по умолчанию) по центру.
         align-items: center;
+        margin-left: 0.5rem;
         // Цвет текста элемента.
         color: #112d49;
     }
+    // Кнопка удаления всех задач из списка пользователя.
+    .button-toDoClear {
+        &:hover {
+            color: red;
+            transform: scale(1.2);
+            background-color: inherit;
+        }
+    }
+    // Кнопка завершения задачи из списка пользователя.
+    .button-toDoCheck {
+        &:hover {
+            color: green;
+            transform: scale(1.25);
+            background-color: inherit;
+        }
+    }
+
+    transition: cubic-bezier(0.19, 1, 0.22, 1) all 1s;
+}
+
+.toDoDisable {
+    background-color: grey;
+    transition: cubic-bezier(0.19, 1, 0.22, 1) all 1s;
 }

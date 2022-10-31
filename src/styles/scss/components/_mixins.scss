@@ -7,8 +7,3 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-// Плавный переход.
-@mixin transitionProperty {
-  transition-property: all;
-  transition-duration: 500ms;
-}

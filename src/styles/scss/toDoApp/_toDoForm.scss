@@ -1,0 +1,14 @@
+.button-toDoForm{
+    margin: 0 0.5rem;
+    font-size: 1.7rem;
+    transform: rotate(180deg);
+    color: beige;
+    background-color: inherit;
+    transition:cubic-bezier(0.23, 1, 0.320, 1) all 0.8s;
+    &:hover{
+        transform: rotate(360deg);
+        transform: scale(1.25);
+        color:darkkhaki;
+        background-color: inherit;
+    }
+}

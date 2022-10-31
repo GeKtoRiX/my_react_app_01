@@ -1,31 +1,30 @@
-// Импорт иконки из библиотеки react-icons.
-import { RiTodoFill } from "react-icons/ri";
+// Импорт иконок из библиотеки react-icons.
+import { RiTodoFill, RiDeleteBin2Line } from "react-icons/ri";
+import { FaCheck } from "react-icons/fa";
 // Отдельная задача из списка.
-const ToDo = ({ toDo, deleteToDo, index }) => {
+const ToDo = ({ toDo, deleteToDo, toggleToDo }) => {
   return (
     // При двойном нажатии левой кнопки мыши происходит пробрасывание индекса текущего компонента для его удаления из списка заданий.
-    <div onDoubleClick={() => deleteToDo(index)} className="toDo">
+    <div className={`toDo ${toDo.isCompleted ? "toDoDisable" : ""}`}>
       <RiTodoFill
-        style={{ margin: "0 0.5rem", fontSize: "1.8rem", color: "teal" }}
+        className={`icon-std ${toDo.isCompleted ? "icon-std-disable" : ""}`}
       />
-      <div className="toDo__text">{toDo}</div>
-      <button className="">
-        {" "}
-        <RiTodoFill
-          style={{
-            fontSize: "1.8rem",
-            color: "lightgrey",
-          }}
-        />{" "}
+      <div className="toDo__text">{toDo.text}</div>
+      <button
+        onClick={() => deleteToDo(toDo.id)}
+        className={`button-std icon-std button-toDoClear ${
+          toDo.isCompleted ? "icon-std-disable" : ""
+        }`}
+      >
+        <RiDeleteBin2Line />
       </button>
-      <button className="">
-        {" "}
-        <RiTodoFill
-          style={{
-            fontSize: "1.8rem",
-            color: "lightgrey",
-          }}
-        />{" "}
+      <button
+        onClick={() => toggleToDo(toDo.id)}
+        className={`button-std icon-std button-toDoCheck ${
+          toDo.isCompleted ? "icon-std-disable" : ""
+        }`}
+      >
+        <FaCheck />
       </button>
     </div>
   );
