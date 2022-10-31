@@ -8,6 +8,7 @@
 @use "./components/mixins";
 /* Приложения сайта.*/
 //=======toDoApp=======
+@use "./toDoApp/allToDoActions";
 @use "./toDoApp/toDo";
 @use "./toDoApp/toDoForm";
 @use "./toDoApp/toDoList";

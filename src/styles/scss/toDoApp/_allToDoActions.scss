@@ -1,0 +1,13 @@
+//Главные кнопки управления списком задач пользователя.
+.buttons-allToDo {
+    min-width: 45px;
+    min-height: 40px;
+    margin: 0 0.7rem;
+    &:hover {
+        background-color: khaki;
+    }
+}
+
+.button-noneDoneTodo {
+    display: none;
+}

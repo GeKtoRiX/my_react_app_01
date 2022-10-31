@@ -1,9 +1,9 @@
 // Загрузка хука отслеживания состояний компонента.
 import { useState } from "react";
-// REACT ICONS.
-import { RiRefreshLine, RiDeleteBin2Line } from "react-icons/ri";
 // Создание случайных идентификаторов.
 import { v4 as uuidv4 } from "uuid";
+// Визуальное отображение двух главных кнопок очистки всего списка или выделенных элементов.
+import AllToDoActions from "./toDoApp/AllToDoActions";
 // Визуальное отображение(рендеринг) каждого toDo элемента.
 import ToDoForm from "./toDoApp/ToDoForm";
 // Создание массива toDo комонентов на основе массива задач пользователя.
@@ -40,7 +40,20 @@ function App() {
     addToDo(toDoArr.filter((toDo) => toDo.id !== toDoID));
   };
   /* 
-  Обработчик переключения статуса задачи пользователя */
+  Удаление выполненных задач 
+  */
+  const delDoneToDoHandler = () => {
+    addToDo(toDoArr.filter((toDo) => !toDo.isCompleted));
+  };
+  /*   
+Удаление всех задач пользователя из списка. 
+*/
+  const deleteAllToDoHandler = () => {
+    addToDo([]);
+  };
+  /* 
+  Обработчик переключения статуса задачи пользователя.
+  */
   const toggleToDoHandler = (toDoID) => {
     addToDo(
       toDoArr.map((toDo) =>
@@ -53,6 +66,7 @@ function App() {
     );
   };
   // =======[___END___]=======
+  const doneToDoNums = toDoArr.filter((toDo) => toDo.isCompleted).length;
   return (
     <div className="app">
       <h1>ToDo Application</h1>
@@ -61,19 +75,17 @@ function App() {
         <h2>ToDo list is empty</h2>
       ) : (
         <>
-          <div className="buttons-std">
-            <button className={`button-std icon-std button-app`}>
-              <RiRefreshLine />
-            </button>
-            <button className="button-std icon-std button-app">
-              <RiDeleteBin2Line />
-            </button>
-          </div>
+          <AllToDoActions
+            deleteAllToDo={deleteAllToDoHandler}
+            deleteDoneToDo={delDoneToDoHandler}
+            doneToDoNums={doneToDoNums}
+          />
           <ToDoList
             toDoArr={toDoArr}
             deleteToDo={deleteToDoHandler}
             toggleToDo={toggleToDoHandler}
           />
+          <h2>Completed tasks: {doneToDoNums}</h2>
         </>
       )}
     </div>
