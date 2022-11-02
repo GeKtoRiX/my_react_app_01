@@ -23,7 +23,7 @@ const ToDoForm = ({ addNewToDo }) => {
   // Хук отслеживания изменений строки текущего состояния задачи пользователя(toDo).
   const [textToDo, setTextToDo] = useState("");
   return (
-    // Форма отправки и область ввода данных .
+    // Форма отправки и область ввода данных.
     <form className="form" onSubmit={onSubmitHandler}>
       <input
         className="input"
